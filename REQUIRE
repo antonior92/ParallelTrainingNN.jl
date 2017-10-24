@@ -2,4 +2,3 @@ julia 0.6
 Distributions 0.12.0
 Optim 0.7.4
 Plots 0.10.3
-JLD 0.6.9

@@ -3,7 +3,6 @@ module ParallelTrainingNN
 import Distributions
 import Optim
 import Plots
-import JLD
 
 export
     # Static Models
@@ -74,9 +73,6 @@ export
     learn_offset,
     learn_normalization,
 
-    # Datasets
-    pilot_plant,
-
     # Plots
     plot_input,
     plot_output
@@ -107,9 +103,6 @@ include("predictor_error.jl")
 
 # Preprocessing data
 include("preprocess_data.jl")
-
-# Datasets
-include("datasets.jl")
 
 # Plots
 include("plots.jl")
