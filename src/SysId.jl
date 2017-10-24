@@ -1,4 +1,4 @@
-module ParallelTrainingNN
+module SysId
 
 import Distributions
 import Optim
