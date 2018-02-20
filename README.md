@@ -31,7 +31,7 @@ Both the implementation and the examples are originally from the paper:
 ""Parallel Training Considered Harmful?": Comparing Series-Parallel and Parallel Feedforward Network Training"
 Antonio H. Ribeiro and Luis A. Aguirre
 ```
-Preprint available in arXiv ([here](https://arxiv.org/abs/1710.00598))
+Preprint available in arXiv ([here](https://arxiv.org/abs/1706.07119.pdf))
 
 BibTeX entry:
 ```
