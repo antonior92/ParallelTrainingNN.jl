@@ -65,19 +65,17 @@ mutable struct IdData
 end
 
 # Constructor for MIMO data
-function IdData{R<:Real, S<:Real,
-                T<:Real, U<:Real}(y::Matrix{R},
-                                  u::Matrix{S}=Matrix{Float64}(0, 0),
-                                  ts::T=1.0;
-                                  annotation::String="",
-                                  t_start::U=0.0,
-                                  time_unit::String="",
-                                  input_unit::Vector{String}=fill("", size(u, 1)),
-                                  output_unit::Vector{String}=fill("", size(y, 1)),
-                                  input_name::Vector{String}=[string("u", i)
-                                                              for i=1:size(u, 1)],
-                                  output_name::Vector{String}=[string("y", i)
-                                                               for i=1:size(y, 1)])
+function IdData(y::Matrix,u::Matrix=Matrix{Float64}(0, 0),
+                ts::T=1.0;
+                annotation::String="",
+                t_start::U=0.0,
+                time_unit::String="",
+                input_unit::Vector{String}=fill("", size(u, 1)),
+                output_unit::Vector{String}=fill("", size(y, 1)),
+                input_name::Vector{String}=[string("u", i)
+                                            for i=1:size(u, 1)],
+                output_name::Vector{String}=[string("y", i)
+                                             for i=1:size(y, 1)])
 
     # Check Arguments
     ndy = size(y, 2)
