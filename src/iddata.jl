@@ -66,9 +66,9 @@ end
 
 # Constructor for MIMO data
 function IdData(y::Matrix,u::Matrix=Matrix{Float64}(0, 0),
-                ts::T=1.0;
+                ts=1.0;
                 annotation::String="",
-                t_start::U=0.0,
+                t_start=0.0,
                 time_unit::String="",
                 input_unit::Vector{String}=fill("", size(u, 1)),
                 output_unit::Vector{String}=fill("", size(y, 1)),
@@ -89,17 +89,15 @@ function IdData(y::Matrix,u::Matrix=Matrix{Float64}(0, 0),
 end
 
 # Constructor for SISO data
-function IdData{R<:Real, S<:Real,
-                T<:Real, U<:Real}(y::Vector{R},
-                                  u::Vector{S}=Vector{Float64}(0, 0),
-                                  ts::T=1.0;
-                                  annotation::String="",
-                                  t_start::U=0.0,
-                                  time_unit::String="",
-                                  input_unit::String="",
-                                  output_unit::String="",
-                                  input_name::String="u",
-                                  output_name::String="y")
+function IdData(y::Vector, u::Vector=Vector{Float64}(0, 0),
+              ts=1.0;
+              annotation::String="",
+              t_start=0.0,
+              time_unit::String="",
+              input_unit::String="",
+              output_unit::String="",
+              input_name::String="u",
+              output_name::String="y")
 
     # Check Arguments
     ndy = length(y)
@@ -115,18 +113,16 @@ function IdData{R<:Real, S<:Real,
 end
 
 # Constructor for MISO data
-function IdData{R<:Real, S<:Real,
-                T<:Real, U<:Real}(y::Vector{R},
-                                  u::Matrix{S},
-                                  ts::T=1.0;
-                                  annotation::String="",
-                                  t_start::U=0.0,
-                                  time_unit::String="",
-                                  input_unit::Vector{String}=fill("", size(u, 1)),
-                                  output_unit::String="",
-                                  input_name::Vector{String}=[string("u", i)
-                                                              for i=1:size(u, 1)],
-                                  output_name::String="y")
+function IdData(y::Vector, u::Matrix,
+              ts=1.0;
+              annotation::String="",
+              t_start=0.0,
+              time_unit::String="",
+              input_unit::Vector{String}=fill("", size(u, 1)),
+              output_unit::String="",
+              input_name::Vector{String}=[string("u", i)
+                                          for i=1:size(u, 1)],
+              output_name::String="y")
 
     # Check Arguments
     ndy = length(y)
@@ -141,18 +137,16 @@ function IdData{R<:Real, S<:Real,
 end
 
 # Constructor for SIMO data
-function IdData{R<:Real, S<:Real,
-                T<:Real, U<:Real}(y::Matrix{R},
-                                  u::Vector{S},
-                                  ts::T=1.0;
-                                  annotation::String="",
-                                  t_start::U=0.0,
-                                  time_unit::String="",
-                                  input_unit::String="",
-                                  output_unit::Vector{String}=fill("", size(y, 1)),
-                                  input_name::String="u",
-                                  output_name::Vector{String}=[string("y", i)
-                                                               for i=1:size(y, 1)])
+function IdData(y::Matrix, u::Vector,
+              ts=1.0;
+              annotation::String="",
+              t_start=0.0,
+              time_unit::String="",
+              input_unit::String="",
+              output_unit::Vector{String}=fill("", size(y, 1)),
+              input_name::String="u",
+              output_name::Vector{String}=[string("y", i)
+                                           for i=1:size(y, 1)])
 
     # Check Arguments
     ndy = size(y, 2)
