@@ -9,6 +9,9 @@ feedforward neural networks. The neural networks
 may be trained using parallel or series-parallel
 training.
 
+## Requirements
+
+This package is compatible only with Julia v0.6.1-0.6.4 and was not yet adapted to work with the latest releases of Julia programming language. You can download Julia v0.6.4 [here](https://julialang.org/downloads/oldreleases.html).
 
 ## Installation
 
